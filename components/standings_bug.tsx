@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from "react"
+import { useEffect, useId, useState } from "react"
 import './styles/standings.scss'
 
 type StandingsDict = {
@@ -8,6 +8,7 @@ type StandingsDict = {
 }
 type Team = {
     'PlayoffRank': number,
+    'teamId': number,
     'teamImg': string,
     'WINS': number,
     'LOSSES': number
@@ -36,7 +37,7 @@ export default function Standings(){
         // let eastImgs = east?.map((team: Team) => <img src={team.teamImg} className="standings-team-img"/>);
         let topSix = conf?.slice(0, 6).map((team: Team) => {
             return(
-                <tr className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-900 dark:text-gray-400">
+                <tr key={team.teamId} className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-900 dark:text-gray-400">
                     <th scope="row" className="px-3 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {team.PlayoffRank}
                     </th>
@@ -63,7 +64,7 @@ export default function Standings(){
         });
         let playIn = conf?.slice(6, 10).map((team: Team) => {
             return(
-                <tr className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-800 dark:text-gray-600">
+                <tr key={team.teamId} className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-800 dark:text-gray-600">
                     <th scope="row" className="px-3 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {team.PlayoffRank}
                     </th>
@@ -85,7 +86,7 @@ export default function Standings(){
         let rest = conf?.slice(10).map((team: Team) =>
             {
                 return(
-                    <tr className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-900 dark:text-gray-400">
+                    <tr key={team.teamId} className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-900 dark:text-gray-400">
                         <th scope="row" className="px-3 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {team.PlayoffRank}
                         </th>

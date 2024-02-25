@@ -22,7 +22,7 @@ export default function Leaders(){
 
     return(
       <div className="text-center">
-        <h1 className="font-bold">Tonight's Games</h1>
+        <h1 className="font-bold cat-title">Tonight&apos;s Games</h1>
         <div className="flex flex-row flex-wrap space-x-6 self-center justify-center">
             {
                 data?.filter((game: any) => game.gameStatus === 2).map((game: any) => {

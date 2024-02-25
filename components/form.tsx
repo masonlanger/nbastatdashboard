@@ -29,8 +29,8 @@ function TeamFormBug(form : any[]){
                 let line = ele === 'W' ? <hr style={{width: '1.5rem', height: '0.125rem', borderColor: '#4ba363', color: '#4ba363', backgroundColor: '#4ba363'}} /> : <hr style={{width: '1.75rem', height: '0.125rem', borderColor: '#ed4e4e', color: '#ed4e4e', backgroundColor: '#ed4e4e'}} />
                 if(index === 0){
                     return (
-                    <div className="flex flex-col items-center justify-center space-y-0.5">
-                        <div key={index} className="rounded-full bg-gray text-center shadow-inner" style={circleStyle}>{ele}</div>
+                    <div key={index} className="flex flex-col items-center justify-center space-y-0.5">
+                        <div className="rounded-full bg-gray text-center shadow-inner" style={circleStyle}>{ele}</div>
                         {line}
                     </div>
                     );
@@ -106,7 +106,7 @@ export default function TeamForm(){
                     </tr>
                     {form ? form['standings'].slice(0, Math.min(form['standings'].length, 10)).map((team) => {
                         return (
-                            <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                            <tr key={team['teamAbr']} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                                 <th scope="row" className="px-3 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     <div className="flex flex-row items-center team-detail">
                                         <h1 className="font-bold">{team['teamAbr']}</h1>
