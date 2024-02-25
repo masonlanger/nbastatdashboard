@@ -1,7 +1,6 @@
 from nba_api.live.nba.endpoints import scoreboard
 from nba_api.stats.endpoints import leaguestandingsv3
 import json
-import pandas as pd
 
 def getImgByTeamId(teamId):
     return "https://cdn.nba.com/logos/nba/" + str(teamId) + "/primary/D/logo.svg"

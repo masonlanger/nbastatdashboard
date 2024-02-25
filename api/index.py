@@ -4,7 +4,6 @@ from nba_api.stats.endpoints import teamgamelogs
 from nba_api.stats.static import teams
 from nba_api.stats.endpoints import leaguedashteamstats
 import json
-import pandas as pd
 from todaydashboard import initDash
 from standings import get_standings
 
