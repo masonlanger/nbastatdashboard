@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.cat-title {
+  font-weight: 800;
+  font-size: 15pt;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
