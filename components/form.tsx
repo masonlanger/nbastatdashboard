@@ -70,7 +70,6 @@ export default function TeamForm(){
             try {
                 const response = await fetch('/api/form');
                 const result = await response.json();
-                console.log(result)
                 setForm(result);
             } catch (error) {
                 console.error('Error fetching data:', error);
