@@ -8,7 +8,7 @@ export default function Home() {
       {/* <Leaders /> */}
       <div className="flex flex-col space-y-2">
         <Standings />
-        <TeamForm />
+        {/* <TeamForm /> */}
       </div>
     </main>
   );
