@@ -5,10 +5,10 @@ import Standings from "../components/standings_bug";
 export default function Home() {
   return (
     <main className="flex flex-row p-8 space-x-2">
-      {/* <Leaders /> */}
+      <Leaders />
       <div className="flex flex-col space-y-2">
         <Standings />
-        {/* <TeamForm /> */}
+        <TeamForm />
       </div>
     </main>
   );
